@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.routes import auth
-from app.routes import invoices
+from app.routes import invoice
 from app.routes import verification
 
 
@@ -26,7 +26,7 @@ app.add_middleware(
 
 
 app.include_router(auth.router)
-app.include_router(invoices.router)
+app.include_router(invoice.router)
 app.include_router(verification.router)
 
 
