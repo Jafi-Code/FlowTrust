@@ -1,13 +1,456 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlowTrust | Receivable Trust Profiles for SMEs</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#home" class="logo" id="logo-link" aria-label="FlowTrust Home">
+        <span class="logo-box">F</span>
+        <span class="logo-text">FlowTrust</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About Us</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-signin" id="signin-btn">Sign In</button>
+        <button class="btn btn-outline btn-logout" id="logout-btn" style="display: none;">Sign Out</button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== MARKETING SITE ========== -->
+  <div id="marketing-view">
+    <main>
+      <!-- Home / Hero -->
+      <section id="home" class="section hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">Turn unpaid invoices<br>into <span class="accent">finance-ready</span><br>receivables.</h1>
+            <p class="hero-subtitle">FlowTrust is a digital verification and intelligence layer for SME receivables. Upload an invoice and supporting evidence — we build an explainable Trust Profile that helps funders assess legitimate invoices faster.</p>
+            <div class="hero-cta">
+              <a href="#services" class="btn btn-primary">How It Works</a>
+              <button type="button" class="btn btn-outline" id="hero-signin">Get Started</button>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="metal-panel"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Problem & Solution -->
+      <section class="section section-alt problem-solution">
+        <div class="container">
+          <div class="ps-grid">
+            <div class="ps-card">
+              <span class="section-label">The Problem</span>
+              <h2>Cash locked in unpaid invoices</h2>
+              <p>Small and medium-sized businesses often deliver goods or services, issue a legitimate invoice, and still wait weeks or months for payment. Working capital stays tied up — making it harder to pay employees, suppliers, buy materials, or take on new contracts.</p>
+            </div>
+            <div class="ps-card">
+              <span class="section-label">The Solution</span>
+              <h2>Evidence-backed Trust Profiles</h2>
+              <p>An SME uploads an invoice and supporting evidence such as a purchase order or proof of delivery. FlowTrust analyses document consistency, buyer information, delivery evidence and historical payment behaviour to generate an explainable Receivable Trust Profile — so funders can assess legitimate invoices faster.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Us -->
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">Who We Are</span>
+            <h2 class="section-title">About FlowTrust</h2>
+            <p class="section-desc">An independent verification layer — not a lender.</p>
+          </div>
+          <div class="about-grid">
+            <div class="about-card">
+              <div class="card-icon">01</div>
+              <h3>Our Mission</h3>
+              <p>To close the gap between completed work and cash in the bank for SMEs by turning invoices into structured, evidence-backed Trust Profiles that funders can trust.</p>
+            </div>
+            <div class="about-card">
+              <div class="card-icon">02</div>
+              <h3>Our Approach</h3>
+              <p>We combine invoice, buyer, delivery and payment signals into a transparent Receivable Trust Profile. We do not guarantee payment or make the final lending decision — we provide the evidence and risk insights that support it.</p>
+            </div>
+            <div class="about-card">
+              <div class="card-icon">03</div>
+              <h3>Our Advantage</h3>
+              <p>A growing Receivable Trust Network: independent, reusable verification profiles and proprietary transaction intelligence that improve as more SMEs, buyers and funders participate.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="section section-alt">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">What We Do</span>
+            <h2 class="section-title">Services</h2>
+            <p class="section-desc">Verification and intelligence that make receivables finance-ready.</p>
+          </div>
+          <div class="services-grid">
+            <article class="service-card">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
+              </div>
+              <h3>Invoice & Evidence Upload</h3>
+              <p>SMEs upload invoices plus supporting documents — purchase orders, proof of delivery, delivery notes and related records — in one secure portal.</p>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+              </div>
+              <h3>Multi-Signal Analysis</h3>
+              <p>We analyse document consistency, buyer information, buyer confirmation, delivery evidence and historical payment behaviour to build a clear picture of the receivable.</p>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <h3>Receivable Trust Profile</h3>
+              <p>An explainable Trust Profile for each receivable — structured evidence and risk insights that help funders assess legitimate invoices faster, without FlowTrust guaranteeing payment.</p>
+            </article>
+            <article class="service-card">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+              </div>
+              <h3>Funder Decision Support</h3>
+              <p>Banks, invoice-finance providers, fintech lenders and development-finance institutions use our profiles to reduce manual verification and speed up decisions on working-capital facilities.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Segments -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">Who We Serve</span>
+            <h2 class="section-title">Segments</h2>
+            <p class="section-desc">Built for funders and the ecosystems that support SME cash flow.</p>
+          </div>
+          <div class="about-grid">
+            <div class="about-card">
+              <div class="card-icon">Primary</div>
+              <h3>Funding Providers</h3>
+              <p>Commercial banks, invoice-finance providers, alternative funders, fintech lenders, development-finance institutions and supply-chain finance providers who need faster, evidence-backed assessment of SME receivables.</p>
+            </div>
+            <div class="about-card">
+              <div class="card-icon">Secondary</div>
+              <h3>Large Corporate Buyers</h3>
+              <p>Large corporates, government entities, state-owned enterprises and major procurement organisations whose payment behaviour and confirmations strengthen the Trust Network.</p>
+            </div>
+            <div class="about-card">
+              <div class="card-icon">SMEs</div>
+              <h3>SME Suppliers</h3>
+              <p>Businesses that have completed work and issued legitimate invoices — and need those receivables to become finance-ready so they can unlock working capital through participating funders.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section id="pricing" class="section section-alt">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">For Funders</span>
+            <h2 class="section-title">Pricing</h2>
+            <p class="section-desc">Flexible models aligned with how you verify and finance receivables.</p>
+          </div>
+          <div class="pricing-grid">
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h3>Per-Invoice</h3>
+                <p class="price"><span class="currency">From</span> R25</p>
+                <p class="pricing-desc">Pay only for verified invoices.</p>
+              </div>
+              <ul class="pricing-features">
+                <li>Per-invoice verification fee</li>
+                <li>Full Trust Profile per receivable</li>
+                <li>Document & signal analysis</li>
+                <li>API access available</li>
+              </ul>
+              <a href="#contact" class="btn btn-outline btn-block">Talk to Sales</a>
+            </div>
+            <div class="pricing-card featured">
+              <div class="pricing-badge">Recommended</div>
+              <div class="pricing-header">
+                <h3>SaaS Platform</h3>
+                <p class="price"><span class="currency">From</span> R4,500<span class="period">/mo</span></p>
+                <p class="pricing-desc">Monthly access for active funders.</p>
+              </div>
+              <ul class="pricing-features">
+                <li>Unlimited Trust Profiles*</li>
+                <li>Dashboard & reporting</li>
+                <li>Priority support</li>
+                <li>Integration support</li>
+                <li>Team seats included</li>
+              </ul>
+              <a href="#contact" class="btn btn-primary btn-block">Talk to Sales</a>
+            </div>
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h3>Enterprise</h3>
+                <p class="price">Custom</p>
+                <p class="pricing-desc">Banks & large institutions.</p>
+              </div>
+              <ul class="pricing-features">
+                <li>Enterprise licensing</li>
+                <li>Deep system integrations</li>
+                <li>API usage packages</li>
+                <li>Optional success fees</li>
+                <li>Dedicated account management</li>
+              </ul>
+              <a href="#contact" class="btn btn-outline btn-block">Contact Us</a>
+            </div>
+          </div>
+          <p class="pricing-note">*Subject to fair-use policy. Optional success fee on successfully financed receivables available on request.</p>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">Get in Touch</span>
+            <h2 class="section-title">Contact</h2>
+            <p class="section-desc">Partner with us or request a demo of the Receivable Trust Profile.</p>
+          </div>
+          <div class="contact-wrapper">
+            <form class="contact-form" id="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="you@company.com" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="organisation">Organisation</label>
+                <input type="text" id="organisation" name="organisation" placeholder="Bank, funder or company name">
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Partnership, demo or general enquiry">
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us about your interest in FlowTrust..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+            </form>
+            <div class="contact-info">
+              <div class="info-item">
+                <h4>Email</h4>
+                <p>hello@flowtrust.co.za</p>
+              </div>
+              <div class="info-item">
+                <h4>For Funders</h4>
+                <p>Partnerships and integration enquiries for banks, invoice-finance providers and fintech lenders.</p>
+              </div>
+              <div class="info-item">
+                <h4>For SMEs</h4>
+                <p>Sign in to upload invoices and supporting evidence to generate a Trust Profile.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <a href="#home" class="logo logo-footer">
+            <span class="logo-box">F</span>
+            <span class="logo-text">FlowTrust</span>
+          </a>
+          <p class="footer-copy">&copy; 2026 FlowTrust. All rights reserved. FlowTrust does not guarantee payment or make lending decisions.</p>
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ========== DASHBOARD (after sign-in) ========== -->
+  <div id="dashboard-view" style="display: none;">
+    <main class="dashboard-main">
+      <section class="section dashboard-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">SME Portal</span>
+            <h2 class="section-title">Build a Receivable Trust Profile</h2>
+            <p class="section-desc">Upload your invoice and supporting evidence. FlowTrust will analyse the signals and generate an explainable Trust Profile for funders.</p>
+          </div>
+
+          <form class="dashboard-form" id="document-form">
+            <div class="form-group form-group-full">
+              <label for="phone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="+27 82 123 4567" required>
+            </div>
+
+            <div class="form-group form-group-full">
+              <label for="buyer-name">Buyer / Customer Name <span class="required">*</span></label>
+              <input type="text" id="buyer-name" name="buyer-name" placeholder="e.g. Large Corporate or Government Entity" required>
+            </div>
+
+            <div class="upload-grid">
+              <div class="upload-card">
+                <div class="upload-header">
+                  <span class="upload-icon">INV</span>
+                  <h3>Invoice <span class="required">*</span></h3>
+                </div>
+                <p class="upload-hint">Valid tax invoice for goods or services delivered</p>
+                <label class="file-label">
+                  <input type="file" id="invoice" name="invoice" accept=".pdf,.jpg,.jpeg,.png" required>
+                  <span class="file-btn">Choose File</span>
+                  <span class="file-name" id="invoice-name">No file chosen</span>
+                </label>
+              </div>
+
+              <div class="upload-card">
+                <div class="upload-header">
+                  <span class="upload-icon">PO</span>
+                  <h3>Purchase Order</h3>
+                </div>
+                <p class="upload-hint">Buyer purchase order or order confirmation</p>
+                <label class="file-label">
+                  <input type="file" id="purchase-order" name="purchase-order" accept=".pdf,.jpg,.jpeg,.png">
+                  <span class="file-btn">Choose File</span>
+                  <span class="file-name" id="purchase-order-name">No file chosen</span>
+                </label>
+              </div>
+
+              <div class="upload-card">
+                <div class="upload-header">
+                  <span class="upload-icon">POD</span>
+                  <h3>Proof of Delivery <span class="required">*</span></h3>
+                </div>
+                <p class="upload-hint">Delivery note, signed POD or completion certificate</p>
+                <label class="file-label">
+                  <input type="file" id="proof-of-delivery" name="proof-of-delivery" accept=".pdf,.jpg,.jpeg,.png" required>
+                  <span class="file-btn">Choose File</span>
+                  <span class="file-name" id="proof-of-delivery-name">No file chosen</span>
+                </label>
+              </div>
+
+              <div class="upload-card">
+                <div class="upload-header">
+                  <span class="upload-icon">ID</span>
+                  <h3>ID Document <span class="required">*</span></h3>
+                </div>
+                <p class="upload-hint">National ID, passport or director’s ID</p>
+                <label class="file-label">
+                  <input type="file" id="id-document" name="id-document" accept=".pdf,.jpg,.jpeg,.png" required>
+                  <span class="file-btn">Choose File</span>
+                  <span class="file-name" id="id-document-name">No file chosen</span>
+                </label>
+              </div>
+
+              <div class="upload-card">
+                <div class="upload-header">
+                  <span class="upload-icon">BANK</span>
+                  <h3>Bank Statement</h3>
+                </div>
+                <p class="upload-hint">Recent statement to support account details</p>
+                <label class="file-label">
+                  <input type="file" id="bank-statement" name="bank-statement" accept=".pdf,.jpg,.jpeg,.png">
+                  <span class="file-btn">Choose File</span>
+                  <span class="file-name" id="bank-statement-name">No file chosen</span>
+                </label>
+              </div>
+
+              <div class="upload-card">
+                <div class="upload-header">
+                  <span class="upload-icon">CIPC</span>
+                  <h3>CIPC Document</h3>
+                </div>
+                <p class="upload-hint">Company registration / CIPC certificate</p>
+                <label class="file-label">
+                  <input type="file" id="cipc-document" name="cipc-document" accept=".pdf,.jpg,.jpeg,.png">
+                  <span class="file-btn">Choose File</span>
+                  <span class="file-name" id="cipc-document-name">No file chosen</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-lg">Generate Trust Profile</button>
+            </div>
+          </form>
+
+          <div class="success-message" id="success-message" style="display: none;">
+            <div class="success-icon">✓</div>
+            <h3>Trust Profile Submitted</h3>
+            <p>Your invoice and supporting evidence have been received. FlowTrust will analyse the signals and produce an explainable Receivable Trust Profile. Participating funders can use this profile to assess the receivable — FlowTrust does not guarantee payment or make the lending decision.</p>
+            <button type="button" class="btn btn-outline" id="submit-another">Submit Another Invoice</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Sign In Modal -->
+  <div class="modal-overlay" id="signin-modal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <h2 id="modal-title">Sign In</h2>
+      <form class="signin-form" id="signin-form">
+        <div class="form-group">
+          <label for="signin-email">Email</label>
+          <input type="email" id="signin-email" placeholder="you@company.com" required>
+        </div>
+        <div class="form-group">
+          <label for="signin-password">Password</label>
+          <input type="password" id="signin-password" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+        <p class="signin-note">Demo: any email & password will work. After sign-in you can upload invoices and evidence.</p>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
